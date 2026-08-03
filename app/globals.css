@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Ported 1:1 from the original Ledger app's :root block. */
+  --ink: #0d1119;
+  --panel: #171e2b;
+  --panel-raised: #1f2836;
+  --panel-hover: #242e3f;
+  --hairline: #2a3345;
+  --hairline-soft: #212938;
+  --brass: #c9a15a;
+  --brass-soft: #d9b36c;
+  --brass-dim: #8a7143;
+  --clay: #c1573f;
+  --clay-dim: #7a392a;
+  --teal: #5b9c93;
+  --teal-dim: #3a6560;
+  --text: #edeae1;
+  --text-muted: #8d96aa;
+  --text-faint: #4e5769;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(
+    ellipse 1200px 600px at 50% -10%,
+    #171e2e 0%,
+    var(--ink) 55%
+  );
+  background-attachment: fixed;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--brass-dim);
+  color: var(--text);
+}
+
+/* Glass card treatment, shared by the shadcn Card primitive and
+   feature components — carried over from the original .card class. */
+.ledger-glass {
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    rgba(31, 40, 54, 0.7) 0%,
+    rgba(23, 30, 43, 0.7) 100%
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
